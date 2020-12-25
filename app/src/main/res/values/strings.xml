@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SunLightWeather</string>
+    <string name="search">输入地址</string>
+    <string name="notsearch">未能查询到任何地点</string>
 </resources>
