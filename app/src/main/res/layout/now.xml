@@ -32,6 +32,15 @@
             android:textColor="#fff"
             android:textSize="22sp" />
 
+        <Button
+            android:id="@+id/menuBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="356dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/menu"
+            android:layout_marginLeft="350dp" />
+
     </FrameLayout>
 
     <LinearLayout

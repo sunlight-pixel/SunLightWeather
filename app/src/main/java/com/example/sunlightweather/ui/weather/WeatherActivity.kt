@@ -1,6 +1,8 @@
 package com.example.sunlightweather.ui.weather
 
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -19,6 +21,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.sunlightweather.R
 import com.example.sunlightweather.logic.model.Weather
 import com.example.sunlightweather.logic.model.getSky
+import com.example.sunlightweather.more
 import kotlinx.android.synthetic.main.activity_weather.*
 import kotlinx.android.synthetic.main.forecast.*
 import kotlinx.android.synthetic.main.life_index.*
@@ -29,6 +32,10 @@ import java.util.*
 class WeatherActivity : AppCompatActivity() {
 
     val viewModel by lazy { ViewModelProviders.of(this).get(WeatherViewModel::class.java) }
+
+    //换壁纸
+    private lateinit var pref: SharedPreferences
+    private var bgNum = 0
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +90,14 @@ class WeatherActivity : AppCompatActivity() {
                 manager.hideSoftInputFromWindow(drawerView.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
             }
         })
+
+
+        menuBtn.setOnClickListener {
+            val intent = Intent(this,more::class.java)
+            startActivity(intent)
+        }
+
+        exchangeBg()
     }
 fun refreshWeather(){
     viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
@@ -127,5 +142,16 @@ fun refreshWeather(){
         ultravioletText.text = lifeIndex.ultraviolet[0].desc
         carWashingText.text = lifeIndex.carWashing[0].desc
         weatherLayout.visibility = View.VISIBLE
+    }
+
+    //        换壁纸的函数
+    fun exchangeBg() {
+        pref = getSharedPreferences("bg_pref", Context.MODE_PRIVATE)
+        bgNum = pref.getInt("bg", 2)
+        when (bgNum) {
+            0 -> weatherLayout.setBackgroundResource(R.mipmap.bg)
+            1 -> weatherLayout.setBackgroundResource(R.mipmap.bg1)
+            2 -> weatherLayout.setBackgroundResource(R.mipmap.bg2)
+        }
     }
 }

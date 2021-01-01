@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/changebg"
+        android:title="设置壁纸"
+        android:icon="@drawable/ic_home" />
+    <item
+        android:id="@+id/help"
+        android:title="帮助信息"
+        android:icon="@drawable/ic_home" />
+</menu>
