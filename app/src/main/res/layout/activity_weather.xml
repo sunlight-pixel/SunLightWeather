@@ -50,28 +50,37 @@
             android:src="@drawable/me"
             android:layout_centerInParent="true" />
 
-        <TextView
-            android:id="@+id/mailText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="100dp"
-            android:text="18579066502@163.com"
-            android:textColor="#FFF"
-            android:textSize="14sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/mailText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_marginLeft="100dp"-->
+<!--            android:text="18579066502@163.com"-->
+<!--            android:textColor="#FFF"-->
+<!--            android:textSize="14sp" />-->
 
         <TextView
             android:id="@+id/userText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/mailText"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="100dp"
-            android:text="Hello,Sunlight!"
+            android:layout_marginLeft="110dp"
+            android:text="欢迎进入sunlight天气预报app"
             android:textColor="#FFF"
             android:textSize="14sp" />
+        <Button
+            android:id="@+id/tologinactivityBtn"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="111dp"
+            android:background="@drawable/selector_loginactivity_button"
+            android:textColor="#fff"
+            android:text="登录"
+            android:onClick="onClick"
+            android:layout_marginTop="20dp"/>
         <fragment
             android:id="@+id/placeFragment"
             android:name="com.example.sunlightweather.ui.place.PlaceFragment"

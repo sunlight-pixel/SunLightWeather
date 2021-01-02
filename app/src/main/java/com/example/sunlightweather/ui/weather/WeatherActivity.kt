@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.sunlightweather.R
 import com.example.sunlightweather.logic.model.Weather
 import com.example.sunlightweather.logic.model.getSky
+import com.example.sunlightweather.loginActivity
 import com.example.sunlightweather.more
 import kotlinx.android.synthetic.main.activity_weather.*
 import kotlinx.android.synthetic.main.forecast.*
@@ -98,6 +99,11 @@ class WeatherActivity : AppCompatActivity() {
         }
 
         exchangeBg()
+
+        tologinactivityBtn.setOnClickListener {
+            val intent = Intent(this, loginActivity::class.java)
+            startActivity(intent)
+        }
     }
 fun refreshWeather(){
     viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
